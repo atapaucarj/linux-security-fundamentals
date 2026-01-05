@@ -15,10 +15,17 @@ This lab demonstrates foundational Linux security hardening practices, including
 - Document security-focused system changes
 
 ## User & Permission Management
-Brief explanation + screenshots 02–03
+A non-root user was created and granted sudo privileges to enforce the principle of least privilege while still allowing administrative actions when required.
+
+![Non-root user validation](02-nonroot-user-validation.png)
+
+Sudo access was validated by executing privileged commands as the non-root user. Although the command executed successfully, package updates failed due to a temporary DNS/network resolution issue within the virtual machine. This confirmed that the failure was related to connectivity rather than insufficient privileges.
+
+![Sudo validation](03-sudo-validation.png)
+
 
 ## SSH Service Management
-Brief explanation + screenshots 04–05
+The SSH service was installed but inactive by default, reflecting a secure baseline. The service was manually started and enabled to allow controlled remote administration and persistence after system reboots.
 
 ## SSH Hardening
 Brief explanation + screenshots 06–08
