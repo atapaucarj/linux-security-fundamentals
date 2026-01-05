@@ -31,7 +31,20 @@ The SSH service was installed but inactive by default, reflecting a secure basel
 ![SSH enabled on boot](05-ssh-enabled.png)
 
 ## SSH Hardening
-Brief explanation + screenshots 06–08
+SSH access was hardened by explicitly disabling root login and defining authentication behavior. These settings were added manually to ensure security controls were explicitly enforced rather than relying on default configurations.
+
+![SSH hardening configuration](06-ssh-hardening-config.png)
+
+## Configuration Validation
+Configuration changes were validated prior to restarting the SSH service to reduce the risk of misconfiguration and accidental lockouts.
+
+![SSH config validation](07-ssh-config-validation.png)
+
+## Post-Hardening Verification
+After applying the hardened configuration, the SSH service was restarted and verified to be running normally, confirming that the security changes did not disrupt service availability.
+
+![SSH running after hardening](08-ssh-post-hardening.png)
+
 
 ## Logging & Validation
 SSH logs were reviewed to confirm service activity and validate configuration changes.
@@ -39,10 +52,16 @@ SSH logs were reviewed to confirm service activity and validate configuration ch
 ![SSH Logs](screenshots/09-ssh-logs.png)
 
 ## Troubleshooting & Lessons Learned
-(bullets above)
+- Verified that successful sudo execution does not guarantee network connectivity, reinforcing the importance of separating privilege issues from DNS or network failures.
+- Learned that services may be installed but disabled by default, requiring explicit enablement for persistence across reboots.
+- Reinforced the importance of validating SSH configurations before restarting services to prevent accidental lockouts.
+- Applied the principle of least privilege by restricting root SSH access while maintaining controlled administrative capabilities.
+
 
 ## Skills Demonstrated
 - Linux system administration
-- SSH hardening and access control
-- Service management with systemd
+- SSH service configuration and hardening
+- Privilege and access control
 - Security-focused troubleshooting
+- Documentation of technical changes
+
