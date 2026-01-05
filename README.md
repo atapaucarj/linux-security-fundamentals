@@ -49,7 +49,7 @@ After applying the hardened configuration, the SSH service was restarted and ver
 ## Logging & Validation
 SSH logs were reviewed to confirm service activity and validate configuration changes.
 
-![SSH Logs](screenshots/09-ssh-logs.png)
+![SSH Logs](09-ssh-logs.png)
 
 ## Troubleshooting & Lessons Learned
 - Verified that successful sudo execution does not guarantee network connectivity, reinforcing the importance of separating privilege issues from DNS or network failures.
