@@ -27,6 +27,9 @@ Sudo access was validated by executing privileged commands as the non-root user.
 ## SSH Service Management
 The SSH service was installed but inactive by default, reflecting a secure baseline. The service was manually started and enabled to allow controlled remote administration and persistence after system reboots.
 
+![SSH service running](04-ssh-service-running.png)
+![SSH enabled on boot](05-ssh-enabled.png)
+
 ## SSH Hardening
 Brief explanation + screenshots 06–08
 
